@@ -13,7 +13,6 @@ var displayDoctors = function(allDoctors) {
     $(".results").append("<h3>There is no matches</h3>");
   } else {
     for (var i = 0; i < allDoctors.length; i++) {
-      console.log(allDoctors[i]);
       $(".results").append('<li class="doctor-info" id="' + allDoctors[i].id + '"><strong>' + allDoctors[i].firstName + " " + allDoctors[i].lastName + "</strong></li>");
     }
     $(".doctor-info").click(function() {
@@ -30,7 +29,11 @@ $(function () {
     var medicalIssue = $("#search-condition").val();
     var doctorName = $("#search-name").val();
     var speciality = $("#search-speciality").val();
-    console.log(medicalIssue);
     doctor.getDoctors(medicalIssue, doctorName, displayDoctors, speciality);
   });
+
+  // $("#recently-view").click(function () {
+  //   console.log("Click");
+  //   doctor.getRecentlyView(displayDoctors);
+  // });
 });

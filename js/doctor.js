@@ -1,5 +1,5 @@
 var apiKey = require('./../.env').apiKey;
-
+var recentlyViewDoctors = [];
 
 Doctor = function(Id, PracticeName, Address, Phone, FirstName, LastName, Bio, Gender, Image, Title){
   this.id = Id;
@@ -43,14 +43,17 @@ Doctor.prototype.getDoctors = function (medicalIssue, doctorName, displayDoctors
 };
 
 Doctor.prototype.findDoctor = function (allDoctors, searchId, displayDoctorDetails) {
-  console.log("find");
   for (var i = 0; i < allDoctors.length; i++) {
     if (allDoctors[i].id == searchId) {
+      recentlyViewDoctors.push(allDoctors[i]);
       displayDoctorDetails(allDoctors[i]);
     }
   }
 };
 
-exports.doctorModule = Doctor;
+// Doctor.prototype.getRecentlyView = function (displayDoctors) {
+//   console.log(recentlyViewDoctors);
+//   displayDoctors(recentlyViewDoctors);
+// };
 
-// doctors?name=anna&query=skin
+exports.doctorModule = Doctor;

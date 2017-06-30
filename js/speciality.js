@@ -20,7 +20,6 @@ Speciality.prototype.getAllSpecialities = function (displaySpecialities) {
                           );
       allSpecialities.push(speciality);
     }
-    console.log(allSpecialities);
     displaySpecialities(allSpecialities);
   });
 };

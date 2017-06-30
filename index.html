@@ -2,36 +2,45 @@
 <html>
   <head>
     <link rel="stylesheet" href="build/css/vendor.css">
-    <!-- <link rel="stylesheet" href="build/css/styles.css"> -->
+    <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <title>Doctor's finder</title>
   </head>
   <body>
     <div class="container">
+      <div class="jumbotron">
+
+      </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
           <form id="doctor-search">
             <div class="group-form">
-              <select id="search-speciality" class="form-control" name="">
+              <select id="search-speciality" class="form-control">
                 <option value=""></option>
               </select>
             </div>
             <div class="group-form">
               <label for="search-name">Enter Name</label>
-              <input id="search-name" class="form-control" type="text" name="" value="">
+              <input id="search-name" class="form-control" type="text">
             </div>
             <div class="group-form">
               <label for="search-condition">Enter Medical Condition</label>
-              <input id="search-condition" class="form-control" type="text" name="" value="">
+              <input id="search-condition" class="form-control" type="text">
             </div>
-            <button type="submit" name="button">Search</button>
+            <br>
+            <button class="btn btn-info" type="submit" name="button">Search</button>
           </form>
-          <div>
-            <ul class="results">
+          <!-- <br> -->
+          <button id="recently-view" class="btn btn-success" name="button">Click</button>
+          <div id="recently-view-doctors">
 
-            </ul>
           </div>
+        </div>
+        <div class="col-md-3">
+          <ul class="results">
+
+          </ul>
         </div>
         <div class="col-md-6">
           <div id="doctor-details">
