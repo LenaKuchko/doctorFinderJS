@@ -29,7 +29,8 @@ $(function () {
     event.preventDefault();
     var medicalIssue = $("#search-condition").val();
     var doctorName = $("#search-name").val();
+    var speciality = $("#search-speciality").val();
     console.log(medicalIssue);
-    doctor.getDoctors(medicalIssue, doctorName, displayDoctors);
+    doctor.getDoctors(medicalIssue, doctorName, displayDoctors, speciality);
   });
 });

@@ -13,12 +13,17 @@
         <div class="col-md-6">
           <form id="doctor-search">
             <div class="group-form">
+              <select id="search-speciality" class="form-control" name="">
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="group-form">
               <label for="search-name">Enter Name</label>
-              <input id="search-name" type="text" name="" value="">
+              <input id="search-name" class="form-control" type="text" name="" value="">
             </div>
             <div class="group-form">
               <label for="search-condition">Enter Medical Condition</label>
-              <input id="search-condition" type="text" name="" value="" required>
+              <input id="search-condition" class="form-control" type="text" name="" value="">
             </div>
             <button type="submit" name="button">Search</button>
           </form>
