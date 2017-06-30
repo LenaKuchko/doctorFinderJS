@@ -5,7 +5,7 @@ var doctor = new Doctor();
 var displayDoctorDetails = function(doctor) {
   console.log(doctor);
   $("#doctor-details").html("<img src='" + doctor.photo + "'>");
-  $("#doctor-details").append("<h3>" + doctor.firstName +  doctor.lastName  + "</h3><hr>", "<h4>" + doctor.practiceName + "</h4>", "<h4>" + doctor.address + "</h4>", "<h4> <strong>Phone number: </strong>" + doctor.phone + "</h4>");
+  $("#doctor-details").append("<h3>" + doctor.firstName + " " + doctor.lastName  + "</h3><hr>", "<h4>" + doctor.practiceName + "</h4>", "<h4>" + doctor.address + "</h4>", "<h4> <strong>Phone number: </strong>" + doctor.phone + "</h4> <hr> <h3>Biography: </h3>" + "<h4>" + doctor.bio + "</h4>");
 };
 
 var displayDoctors = function(allDoctors) {
@@ -23,8 +23,9 @@ var displayDoctors = function(allDoctors) {
 $(document).ready(function () {
   $("#doctor-search").submit(function(event) {
     event.preventDefault();
-    var medicalIssue = $("#search-param").val();
+    var medicalIssue = $("#search-condition").val();
+    var doctorName = $("#search-name").val();
     console.log(medicalIssue);
-    doctor.getDoctors(medicalIssue, displayDoctors);
+    doctor.getDoctors(medicalIssue, doctorName, displayDoctors);
   });
 });
