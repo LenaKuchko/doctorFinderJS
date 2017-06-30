@@ -1,4 +1,5 @@
 var apiKey = require('./../.env').apiKey;
+var allDoctors = [];
 
 Doctor = function(Id, PracticeName, Address, Phone, FirstName, LastName, Bio, Gender, Image, Title){
   this.id = Id;
@@ -13,13 +14,11 @@ Doctor = function(Id, PracticeName, Address, Phone, FirstName, LastName, Bio, Ge
   this.title = Title;
 };
 
-Doctor.prototype.getDoctors = function (medicalIssue) {
+Doctor.prototype.getDoctors = function (medicalIssue, displayDoctors) {
   $.get('https://api.betterdoctor.com/2016-03-01/doctors?query='+medicalIssue+'&location=45.5231%2C-122.6765%2C%205&user_location=45.5231%2C-122.6765&skip=0&limit=20&user_key=' + apiKey)
   .then(function (response) {
-    console.log(response);
-    var allDoctors = [];
     for (var i = 0; i < response.data.length; i++) {
-      var address = response.data[i].practices[0].visit_address.city + response.data[i].practices[0].visit_address.street + response.data[i].practices[0].visit_address.zip;
+      var address = response.data[i].practices[0].visit_address.city + " " + response.data[i].practices[0].visit_address.street + ", zip: " + response.data[i].practices[0].visit_address.zip;
 
       var newDoctor = new Doctor(
         response.data[i].npi,
@@ -33,13 +32,21 @@ Doctor.prototype.getDoctors = function (medicalIssue) {
         response.data[i].profile.image_url,
         response.data[i].profile.title
       );
-      console.log(newDoctor);
       allDoctors.push(newDoctor);
     }
+    displayDoctors(allDoctors);
   })
   .fail(function(error){
      console.log("fail");
    });
+};
+
+Doctor.prototype.findDoctor = function (allDoctors, searchId, displayDoctorDetails) {
+  for (var i = 0; i < allDoctors.length; i++) {
+    if (allDoctors[i].id == searchId) {
+      displayDoctorDetails(allDoctors[i]);
+    }
+  }
 };
 
 exports.doctorModule = Doctor;
