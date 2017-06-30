@@ -23,7 +23,7 @@ var lib = require('bower-files')({
 });
 
 gulp.task('jsBrowserify', function() {
-  return browserify({ entries: ['./js/doctor-interface.js'] })
+  return browserify({ entries: ['./js/practice-interface.js'] })
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));
