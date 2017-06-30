@@ -1,6 +1,7 @@
 var apiKey = require('./../.env').apiKey;
 
-Doctor = function(PracticeName, Address, Phone, FirstName, LastName, Bio, Gender, Image, Title){
+Doctor = function(Id, PracticeName, Address, Phone, FirstName, LastName, Bio, Gender, Image, Title){
+  this.id = Id;
   this.practiceName = PracticeName;
   this.address = Address;
   this.phone = Phone;
@@ -10,7 +11,6 @@ Doctor = function(PracticeName, Address, Phone, FirstName, LastName, Bio, Gender
   this.gender = Gender;
   this.photo = Image;
   this.title = Title;
-
 };
 
 Doctor.prototype.getDoctors = function (medicalIssue) {
@@ -22,6 +22,7 @@ Doctor.prototype.getDoctors = function (medicalIssue) {
       var address = response.data[i].practices[0].visit_address.city + response.data[i].practices[0].visit_address.street + response.data[i].practices[0].visit_address.zip;
 
       var newDoctor = new Doctor(
+        response.data[i].npi,
         response.data[i].practices[0].name,
         address,
         response.data[i].practices[0].phones[0].number,
