@@ -5,7 +5,7 @@ var doctor = new Doctor();
 var displayDoctorDetails = function(doctor) {
   console.log(doctor);
   $("#doctor-details").html("<img src='" + doctor.photo + "'>");
-  $("#doctor-details").append("<h3>" + doctor.practiceName[i] + "</h3>", "<h4>" + doctor.firstName[i] +  doctor.lastName[i] + "</h4>", "<h4>" + doctor.address[i] + "</h4>", "<h4>" + doctor.phone[i] + "</h4>");
+  $("#doctor-details").append("<h3>" + doctor.firstName +  doctor.lastName  + "</h3><hr>", "<h4>" + doctor.practiceName + "</h4>", "<h4>" + doctor.address + "</h4>", "<h4> <strong>Phone number: </strong>" + doctor.phone + "</h4>");
 };
 
 var displayDoctors = function(allDoctors) {
@@ -13,9 +13,10 @@ var displayDoctors = function(allDoctors) {
     console.log(allDoctors[i]);
     $(".results").append('<li class="doctor-info" id="' + allDoctors[i].id + '"><strong>' + allDoctors[i].firstName + " " + allDoctors[i].lastName + "</strong></li>");
   }
-  $(".info-recipes").click(function() {
+  $(".doctor-info").click(function() {
+    console.log($(this)[0].id);
     var clicked = $(this)[0].id;
-    doctor.findDoctor(clicked, allDoctors, displayDoctorDetails);
+    doctor.findDoctor(allDoctors, clicked, displayDoctorDetails);
   });
 };
 

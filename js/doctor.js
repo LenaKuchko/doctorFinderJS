@@ -42,6 +42,7 @@ Doctor.prototype.getDoctors = function (medicalIssue, displayDoctors) {
 };
 
 Doctor.prototype.findDoctor = function (allDoctors, searchId, displayDoctorDetails) {
+  console.log("find");
   for (var i = 0; i < allDoctors.length; i++) {
     if (allDoctors[i].id == searchId) {
       displayDoctorDetails(allDoctors[i]);
