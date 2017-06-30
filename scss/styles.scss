@@ -1,0 +1,29 @@
+$main : #FFEFDD;
+$container : #0564AD;
+$fontColor : #FF9F1C;
+
+body {
+  background: $main;
+  color: $fontColor;
+  .button, .btn {
+    font-weight: bold;
+    text-align: center;
+    background: $container;
+    color: white;
+  }
+  .header{
+    background: $container;
+
+  }
+  .top {
+    background: $main;
+    height: 50px;
+  }
+  .info {
+    margin-top: 30px;
+  }
+  .group-form {
+    margin-top: 10px;
+  }
+
+}

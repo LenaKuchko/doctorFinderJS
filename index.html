@@ -8,31 +8,40 @@
     <title>Doctor's finder</title>
   </head>
   <body>
-    <div class="container">
-      <div class="jumbotron">
+    <div class="container-fluid">
+      <div class="row top">
 
       </div>
-      <div class="row">
+      <div class="row header">
+        <div class="col-md-12">
+          <div class="page-header">
+            <h2>Portland Medical Group</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container general">
+      <div class="row info">
         <div class="col-md-3">
           <form id="doctor-search">
             <div class="group-form">
-              <select id="search-speciality" class="form-control">
+              <select id="search-speciality" class="form-control" data-live-search="true">
                 <option value=""></option>
               </select>
             </div>
             <div class="group-form">
-              <label for="search-name">Enter Name</label>
-              <input id="search-name" class="form-control" type="text">
+              <!-- <label for="search-name">Enter Name</label> -->
+              <input id="search-name" class="form-control" type="text" placeholder="Doctor's name">
             </div>
             <div class="group-form">
-              <label for="search-condition">Enter Medical Condition</label>
-              <input id="search-condition" class="form-control" type="text">
+              <!-- <label for="search-condition">Enter Medical Condition</label> -->
+              <input id="search-condition" class="form-control" type="text" placeholder="Medical issue">
             </div>
             <br>
-            <button class="btn btn-info" type="submit" name="button">Search</button>
+            <button class="btn" type="submit" name="button">Search</button>
           </form>
           <!-- <br> -->
-          <button id="recently-view" class="btn btn-success" name="button">Click</button>
+          <!-- <button id="recently-view" class="btn btn-success" name="button">Click</button> -->
           <div id="recently-view-doctors">
 
           </div>
