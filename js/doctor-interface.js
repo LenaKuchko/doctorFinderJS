@@ -10,11 +10,13 @@ var displayDoctorDetails = function(doctor) {
 };
 
 var displayDoctors = function(allDoctors) {
+  $("#results").empty();
   if (allDoctors.length === 0) {
-    $(".results").append("<h3>There is no matches</h3>");
+    $("#results").append("<h3>There is no matches</h3>");
   } else {
+    console.log(allDoctors);
     for (var i = 0; i < allDoctors.length; i++) {
-      $(".results").append('<li class="doctor-info" id="' + allDoctors[i].id + '"><strong>' + allDoctors[i].firstName + " " + allDoctors[i].lastName + "</strong></li>");
+      $("#results").append('<li class="doctor-info" id="' + allDoctors[i].id + '"><strong>' + allDoctors[i].firstName + " " + allDoctors[i].lastName + "</strong></li>");
     }
     $(".doctor-info").click(function() {
       console.log($(this)[0].id);
@@ -24,7 +26,7 @@ var displayDoctors = function(allDoctors) {
   }
 };
 
-$(function () {
+$(document).ready (function () {
   $("#doctor-search").submit(function(event) {
     event.preventDefault();
     var medicalIssue = $("#search-condition").val();
