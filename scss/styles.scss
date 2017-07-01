@@ -1,8 +1,10 @@
-$main : #FFEFDD;
+$main : #FFF9F2;
 $container : #0564AD;
 $fontColor : #FF9F1C;
+$mainFont : 'Montserrat', sans-serif;
 
 body {
+  font-family: $mainFont;
   background: $main;
   color: $fontColor;
   .button, .btn {
@@ -13,17 +15,34 @@ body {
   }
   .header{
     background: $container;
-
+    h2 {
+      padding: 5px;
+      font-size: 45px;
+    }
   }
   .top {
     background: $main;
-    height: 50px;
+    height: 40px;
   }
   .info {
     margin-top: 30px;
   }
   .group-form {
     margin-top: 10px;
+  }
+  ul {
+    list-style-type: none;
+    color: $container;
+  }
+  .alert-info, .alert {
+    background-color: $fontColor;
+  }
+  .results {
+    font-size: 18px;
+  }
+  .bottom {
+    background: $container;
+    height: 20px;
   }
 
 }
