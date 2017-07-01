@@ -22,7 +22,7 @@ A web application which allow user search for doctors by name, specialities and 
 |User is able to search by name | "Rieman" | App displays all doctors with last name "Rieman" |  
 |User is able to search by medical condition | "depression" | App displays list of all doctors who treat depression |
 |User is able to search by medical condition and name | "Rieman", "depression"| App displays doctors with last name "Rieman" who treat depression |
-|User is able to find all doctors by speciality | "Legal Medicine"| App displays list of all doctors whose speciality is  Legal Medicine |
+|User is able to find all doctors by speciality | "Dentistry"| App displays list of all doctors whose speciality is  Dentistry |
 |User is able to view doctor's profile.| Click on doctor's name | App displays detail information about current doctor (photo, description, address, phone number) |
 
 ## Technologies Used
