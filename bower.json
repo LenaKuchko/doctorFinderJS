@@ -6,7 +6,7 @@
     "LenaKuchko <kuchkoel@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/LenaKuchko/doctorFinderJS",
   "ignore": [
     "**/.*",
     "node_modules",
